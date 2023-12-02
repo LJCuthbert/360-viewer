@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-360-viewer": "^0.1.0",
+    "react-dom": "^18.2.0",
+    "react-photo-sphere-viewer": "^4.0.2-psv5.4.4",
+    "react-router-dom": "^6.20.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
