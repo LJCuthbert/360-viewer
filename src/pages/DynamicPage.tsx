@@ -6,10 +6,9 @@ import "@egjs/react-view360/css/view360.min.css";
 const DynamicPage: React.FC = () => {
     const { url } = useParams<{ url: string }>();
     const projection = useMemo(() => new EquirectProjection({
-        src: `/${url}.jpg`,
+        src: `/uploads/${url}.jpg`,
 
     }), [])
-
     return (
         <div>
             <h2>Dynamic Page</h2>
