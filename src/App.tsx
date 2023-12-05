@@ -1,22 +1,25 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './App.css'
-import LandingPage from "./pages/LandingPage.tsx";
-import DynamicPage from "./pages/DynamicPage.tsx";
+import LandingPage from './pages/LandingPage.tsx'
+import ViewPage from './pages/ViewPage.tsx'
 
 function App() {
-
-  return (
-    <>
-        <Router>
-            <div>
+    return (
+        <>
+            <Router>
                 <Routes>
-                    <Route path="/" element={<LandingPage/>}/>
-                    <Route path="/viewer/:url" element={<DynamicPage/>}/>
+                    <Route
+                        path="/"
+                        element={<LandingPage />}
+                    />
+                    <Route
+                        path="/viewer/:url"
+                        element={<ViewPage />}
+                    />
                 </Routes>
-            </div>
-        </Router>
-    </>
-  )
+            </Router>
+        </>
+    )
 }
 
 export default App
