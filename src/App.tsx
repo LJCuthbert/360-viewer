@@ -5,7 +5,7 @@ import ViewPage from './pages/ViewPage.tsx'
 
 function App() {
     return (
-        <>
+        <div className="App">
             <Router>
                 <Routes>
                     <Route
@@ -18,7 +18,7 @@ function App() {
                     />
                 </Routes>
             </Router>
-        </>
+        </div>
     )
 }
 
