@@ -46,9 +46,12 @@ const ImageDropzone: React.FC<ImageDropzoneProps> = ({uploadFile}) => {
             <label
                 htmlFor="dropzone-file"
                 className={` dark:hover:bg-bray-800 flex h-64 w-[50%] cursor-pointer flex-col items-center justify-center rounded-lg
-            border-4 border-gray-300 bg-gray-50 shadow-xl hover:border-dashed hover:bg-gray-100 hover:shadow 
-            dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600 max-md:w-full
-            ${isDragging ? 'border-dashed border-blue-500 bg-blue-100 dark:border-blue-600 dark:bg-blue-600' : ''}`}
+            border-4 max-md:w-full
+            ${
+                isDragging
+                    ? 'border-dashed border-blue-500 bg-blue-100 dark:border-blue-600 dark:bg-blue-600'
+                    : 'border-gray-300 bg-gray-50 shadow-xl hover:border-dashed hover:bg-gray-100 hover:shadow dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600'
+            }`}
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}>
