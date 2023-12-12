@@ -13,7 +13,7 @@ function App() {
                         element={<LandingPage />}
                     />
                     <Route
-                        path="/viewer/:url"
+                        path="/view/:url"
                         element={<ViewPage />}
                     />
                 </Routes>
