@@ -1,5 +1,5 @@
 // ImageDropzone.tsx
-import React, {ChangeEvent, DragEvent, useState} from 'react'
+import React, {DragEvent, useState} from 'react'
 import {UploadLogo} from '../assets/Images.tsx'
 import Alert from './Alert.tsx'
 
@@ -19,9 +19,11 @@ const ImageDropzone: React.FC<ImageDropzoneProps> = ({uploadFile}) => {
             isAlertShowing('block')
         }
     }
-    const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const file = event.target.files?.[0]
-        imageErrorValidation(file)
+    const handleImageChange = (event: React.FormEvent<HTMLInputElement>) => {
+        const target = event.target as HTMLInputElement & {
+            files: FileList
+        }
+        imageErrorValidation(target.files[0])
     }
     const handleDrop = (event: DragEvent<HTMLLabelElement>) => {
         event.preventDefault()
@@ -66,7 +68,7 @@ const ImageDropzone: React.FC<ImageDropzoneProps> = ({uploadFile}) => {
                     id="dropzone-file"
                     type="file"
                     className="hidden"
-                    accept="image/*"
+                    accept="image/jpeg, image/jpg"
                     onChange={handleImageChange}
                 />
             </label>
